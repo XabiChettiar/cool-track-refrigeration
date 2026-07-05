@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-brand-black: #0A0A0A;
+  --color-brand-charcoal: #161616;
+  --color-brand-gold: #FFDD2B;
+  --color-brand-gold-deep: #C9A812;
+  --color-brand-steel: #B8BCC2;
+  --color-brand-white: #F2F2F0;
+  --color-brand-grey: #8A8A88;
+
+  /* Fonts */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono-spec: 'JetBrains Mono', monospace;
+}
+
+body {
+  @apply bg-brand-black text-brand-white;
+  font-family: var(--font-body);
+}
