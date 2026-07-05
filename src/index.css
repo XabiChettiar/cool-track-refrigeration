@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  font-size: 175%;
+}
+
 @theme {
   /* Brand colors */
   --color-brand-black: #0A0A0A;
