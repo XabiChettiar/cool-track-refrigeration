@@ -53,8 +53,8 @@ function HeroSequence() {
       tl.fromTo(text2Ref.current, { y: 40, opacity: 0 }, { y: 0, opacity: 1, ease: "none", duration: 0.1 }, 0.48)
 
       // PHASE 4 (text2 + img2 shift up to clear space)
-      tl.to(text2Ref.current, { y: -160, ease: "none", duration: 0.13 }, 0.55)
-      tl.to(img2Ref.current, { y: -160, ease: "none", duration: 0.13 }, 0.55)
+      tl.to(text2Ref.current, { y: -160, ease: "none", duration: 0.13 }, 0.6)
+      tl.to(img2Ref.current, { y: -160, ease: "none", duration: 0.13 }, 0.6)
 
       // PHASE 5 (features reveal one by one)
       tl.to(featuresRef.current, { opacity: 1, ease: "none", duration: 0.04 }, 0.72)
@@ -90,8 +90,8 @@ function HeroSequence() {
         style={{ background: "linear-gradient(180deg, transparent 0%, rgba(184,188,194,0.06) 40%, rgba(184,188,194,0.12) 100%)" }}
       />
 
-      <div className="relative z-20 min-h-screen flex items-center px-8 md:px-16">
-        <div ref={text1Ref} className="flex-1 flex flex-col justify-center">
+      <div className="relative z-20 min-h-screen flex flex-col md:flex-row items-center justify-center px-8 md:px-16 pt-16 md:pt-0 gap-2 md:gap-0">
+        <div ref={text1Ref} className="flex-none md:flex-1 flex flex-col justify-center text-center md:text-left">
           <p className="text-brand-gold text-sm tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-mono-spec)' }}>
             Cool Track Refrigeration
           </p>
@@ -102,12 +102,12 @@ function HeroSequence() {
             From display to deep freeze — precision cooling systems built for demanding environments.
           </p>
         </div>
-        <div className="flex-1 flex items-center justify-center relative">
-          <img ref={img1Ref} src={coldRoomImg} alt="Cold Room Modular Cold Storage" className="w-full max-w-xl object-contain scale-125" />
+        <div className="flex-none md:flex-1 flex items-center justify-center relative">
+          <img ref={img1Ref} src={coldRoomImg} alt="Cold Room Modular Cold Storage" className="w-full max-w-[380px] md:max-w-xl object-contain scale-100 md:scale-125" />
         </div>
       </div>
 
-      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-8 pb-40 opacity-0">
+      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center px-8 pb-72 md:pb-40 opacity-0">
         <p className="text-brand-gold text-sm tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-mono-spec)' }}>
           Storage Freezing
         </p>
@@ -120,7 +120,7 @@ function HeroSequence() {
           ref={img2Ref}
           src={frostVaultImg}
           alt="Chest Freezer"
-          className="absolute -bottom-16 left-1/2 -translate-x-1/2 z-10 w-full max-w-2xl object-contain opacity-0"
+          className="absolute bottom-24 md:-bottom-16 left-1/2 -translate-x-1/2 z-10 w-full max-w-[400px] md:max-w-2xl object-contain opacity-0"
         />
 
       {/* Features row */}
@@ -140,8 +140,8 @@ function HeroSequence() {
       </div>
 
       {/* Product overview — Phase 6 */}
-      <div ref={productOverlayRef} className="absolute inset-0 z-30 flex flex-col items-center justify-center px-8 pointer-events-none">
-        <div ref={productHeaderRef} className="text-center mb-10 opacity-0" style={{ transform: "translateY(40px)" }}>
+      <div ref={productOverlayRef} className="absolute inset-0 z-30 flex flex-col items-center justify-start md:justify-center px-8 pt-16 pb-8 md:py-0 pointer-events-none">
+        <div ref={productHeaderRef} className="text-center mb-6 md:mb-10 opacity-0" style={{ transform: "translateY(40px)" }}>
           <p className="text-brand-gold text-sm tracking-widest uppercase mb-3" style={{ fontFamily: 'var(--font-mono-spec)' }}>
             Our Products
           </p>
