@@ -11,11 +11,11 @@ function ProductPage() {
   const scrollRef = useRef(null)
 
   const titleOverlapClass =
-    product?.id === "chest-freezer" ? "-mb-17 md:-mb-21" :
-    product?.id === "cake-display-counter" ? "-mb-11 md:-mb-13" :
-    product?.id === "aerocore-12" ? "-mb-10 md:-mb-14" :
-    product?.id === "1tr-20tr-chiller" ? "-mb-20 md:-mb-28" :
-    "-mb-5 md:-mb-8"
+    product?.id === "chest-freezer" ? "-mb-6 md:-mb-21" :
+    product?.id === "cake-display-counter" ? "-mb-5 md:-mb-13" :
+    product?.id === "aerocore-12" ? "-mb-5 md:-mb-14" :
+    product?.id === "1tr-20tr-chiller" ? "-mb-6 md:-mb-28" :
+    "-mb-4 md:-mb-8"
 
   const imageSizeClass =
     product?.id === "cold-room" ? "max-w-lg" :
