@@ -103,11 +103,11 @@ function HeroSequence() {
           </p>
         </div>
         <div className="flex-none md:flex-1 flex items-center justify-center relative">
-          <img ref={img1Ref} src={coldRoomImg} alt="Cold Room Modular Cold Storage" className="w-full max-w-[380px] md:max-w-xl object-contain scale-100 md:scale-125" />
+          <img ref={img1Ref} src={coldRoomImg} alt="Cold Room Modular Cold Storage" className="w-full max-w-sm md:max-w-xl object-contain scale-100 md:scale-125" />
         </div>
       </div>
 
-      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center px-8 pb-72 md:pb-40 opacity-0">
+      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center px-8 pb-72 md:pb-84 opacity-0">
         <p className="text-brand-gold text-sm tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-mono-spec)' }}>
           Storage Freezing
         </p>
@@ -120,7 +120,7 @@ function HeroSequence() {
           ref={img2Ref}
           src={frostVaultImg}
           alt="Chest Freezer"
-          className="absolute bottom-24 md:-bottom-16 left-1/2 -translate-x-1/2 z-10 w-full max-w-[400px] md:max-w-2xl object-contain opacity-0"
+          className="absolute bottom-28 md:bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-sm md:max-w-2xl object-contain opacity-0"
         />
 
       {/* Features row */}
