@@ -107,7 +107,7 @@ function HeroSequence() {
         </div>
       </div>
 
-      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center px-8 pb-72 md:pb-84 opacity-0">
+      <div ref={text2Ref} className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center px-8 pb-84 md:pb-84 opacity-0">
         <p className="text-brand-gold text-sm tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-mono-spec)' }}>
           Storage Freezing
         </p>
@@ -120,7 +120,7 @@ function HeroSequence() {
           ref={img2Ref}
           src={frostVaultImg}
           alt="Chest Freezer"
-          className="absolute bottom-28 md:bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-sm md:max-w-2xl object-contain opacity-0"
+          className="absolute bottom-20 md:bottom-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-sm md:max-w-2xl object-contain opacity-0"
         />
 
       {/* Features row */}
