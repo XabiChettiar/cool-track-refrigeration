@@ -141,21 +141,21 @@ function HeroSequence() {
 
       {/* Product overview — Phase 6 */}
       <div ref={productOverlayRef} className="absolute inset-0 z-30 flex flex-col items-center justify-start md:justify-center px-8 pt-16 pb-8 md:py-0 pointer-events-none">
-        <div ref={productHeaderRef} className="text-center mb-6 md:mb-10 opacity-0" style={{ transform: "translateY(40px)" }}>
+        <div ref={productHeaderRef} className="text-center mb-3 md:mb-10 opacity-0" style={{ transform: "translateY(40px)" }}>
           <p className="text-brand-gold text-sm tracking-widest uppercase mb-3" style={{ fontFamily: 'var(--font-mono-spec)' }}>
             Our Products
           </p>
-          <h2 className="text-brand-white text-3xl md:text-5xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
+          <h2 className="text-brand-white text-xl md:text-5xl font-bold" style={{ fontFamily: 'var(--font-heading)' }}>
             High Quality Refrigeration Solutions
           </h2>
         </div>
 
-        <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4">
           {products.map((product, i) => (
             <Link key={product.id}
               to={`/products/${product.id}`}
               state={{ backgroundLocation: location }}
-              className={`product-card-${i} group bg-brand-charcoal rounded-lg p-4 flex flex-col hover:bg-brand-charcoal/70 transition-colors opacity-0`}
+              className={`product-card-${i} group bg-brand-charcoal rounded-lg p-2 md:p-4 flex flex-col hover:bg-brand-charcoal/70 transition-colors opacity-0`}
               style={{ transform: "translateY(20px)" }}
             >
               <div className="flex-1 flex items-center justify-center py-4">

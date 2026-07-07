@@ -43,7 +43,7 @@ function ProductOverview() {
 }, [])
 
   return (
-    <section ref={sectionRef} className="bg-brand-black border-t border-brand-charcoal py-8 px-8 md:px-16">
+    <section ref={sectionRef} className="bg-brand-black border-t border-brand-charcoal pt-16 pb-12 md:pt-8 md:pb-8 px-8 md:px-16">
       <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-6">
         {stats.map((stat, i) => (
           <div key={stat.label} className="flex flex-col">
