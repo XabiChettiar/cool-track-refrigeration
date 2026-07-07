@@ -124,13 +124,13 @@ function HeroSequence() {
         />
 
       {/* Features row */}
-      <div ref={featuresRef} className="absolute bottom-0 left-0 w-full z-20 bg-brand-charcoal py-8 px-8 md:px-16 opacity-0">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
+      <div ref={featuresRef} className="absolute bottom-0 left-0 w-full z-20 bg-brand-charcoal py-6 md:py-8 px-8 md:px-16 opacity-0">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-4 md:gap-y-0 md:gap-x-0">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className={`feature-item-${i} flex flex-col gap-1 px-6 opacity-0`}
-              style={{ transform: "translateY(20px)", borderLeft: i !== 0 ? "1px solid rgba(138,138,136,0.25)" : "none" }}
+              className={`feature-item-${i} flex flex-col gap-1 px-4 md:px-6 opacity-0 ${i % 2 !== 0 ? "border-l border-white/10 md:border-none" : ""} ${i !== 0 ? "md:border-l md:border-white/10" : ""}`}
+              style={{ transform: "translateY(20px)" }}
             >
               <p className="text-brand-gold text-sm font-medium" style={{ fontFamily: 'var(--font-heading)' }}>{f.title}</p>
               <p className="text-brand-grey text-sm">{f.desc}</p>
