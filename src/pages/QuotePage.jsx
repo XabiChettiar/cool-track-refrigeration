@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { Mail, Phone, MapPin, Loader2, CheckCircle2, AlertCircle } from "lucide-react"
+import { Mail, Phone, MapPin } from "lucide-react"
 import Navbar from "../components/layout/Navbar"
 import { products, company } from "../data/products"
 
@@ -15,42 +15,21 @@ function QuotePage() {
   const [message, setMessage] = useState(
     product ? "I'm interested in getting a quote for the " + product.name + "." : ""
   )
-  const [status, setStatus] = useState("idle")
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = 0
   }, [productId])
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault()
-    setStatus("sending")
-
-    try {
-      const response = await fetch("/api/send-quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          productName: product?.name,
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error("Failed to send quote")
-      }
-
-      setStatus("success")
-      setName("")
-      setEmail("")
-      setMessage(product ? "I'm interested in getting a quote for the " + product.name + "." : "")
-    } catch (error) {
-      console.error(error)
-      setStatus("error")
-    }
+    const subject = "Quote Request" + (product ? " - " + product.name : "")
+    const body =
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      message
+    const mailtoPart = "mailto:chettiar.bosco07@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)
+    const gmailUrl = "https://mail.google.com/mail/?extsrc=mailto&url=" + encodeURIComponent(mailtoPart)
+    window.open(gmailUrl, "_blank")
   }
 
   return (
@@ -182,33 +161,11 @@ function QuotePage() {
 
               <button
                 type="submit"
-                disabled={status === "sending"}
-                className="bg-brand-gold text-brand-black font-medium py-3 rounded-lg text-sm uppercase tracking-widest hover:bg-brand-gold-deep transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="bg-brand-gold text-brand-black font-medium py-3 rounded-lg text-sm uppercase tracking-widest hover:bg-brand-gold-deep transition-colors"
                 style={{ fontFamily: 'var(--font-mono-spec)' }}
               >
-                {status === "sending" ? (
-                  <>
-                    <Loader2 size={16} className="animate-spin" />
-                    <span>Sending...</span>
-                  </>
-                ) : (
-                  "Send Message"
-                )}
+                Send Message
               </button>
-
-              {status === "success" && (
-                <div className="flex items-center gap-2 text-sm text-brand-gold mt-1">
-                  <CheckCircle2 size={16} />
-                  <span>Message sent — we'll get back to you soon.</span>
-                </div>
-              )}
-
-              {status === "error" && (
-                <div className="flex items-center gap-2 text-sm text-red-400 mt-1">
-                  <AlertCircle size={16} />
-                  <span>Something went wrong. Please try again or email us directly.</span>
-                </div>
-              )}
             </form>
 
           </div>
