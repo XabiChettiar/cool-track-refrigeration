@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { MapPin } from "lucide-react"
-import { company } from "../../data/products"
+import { Link } from "react-router-dom"
+import { Info } from "lucide-react"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -59,16 +59,14 @@ function ProductOverview() {
             <span className="text-brand-grey text-sm">{stat.label}</span>
           </div>
         ))}
-        <a
-          href={company.mapsLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/about"
           className="inline-flex items-center gap-2 bg-brand-gold text-brand-black font-medium px-6 py-3 rounded-full text-sm hover:bg-brand-gold-deep transition-colors"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          <MapPin size={28} />
+          <Info size={28} />
           <span>Know More About Us</span>
-        </a>
+        </Link>
       </div>
     </section>
   )
